@@ -1,0 +1,11 @@
+{
+  "colorScheme": "One Dark Pro",
+  "font": {
+    "face": "CaskaydiaCove Nerd Font Mono",
+    "size": 12
+  },
+  "intenseTextStyle": "all",
+  "opacity": 20,
+  "padding": "10",
+  "useAcrylic": true
+}
