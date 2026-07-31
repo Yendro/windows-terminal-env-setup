@@ -2,15 +2,15 @@
 
 # Configures the format of the prompt.
 format = """
-[](color_red0)\
+[](fg:color_red0)\
 $os\
 $username\
-[](bg:color_orange fg:color_red0)\
+[](fg:color_red0 bg:color_orange)\
 $directory\
-[](fg:color_orange bg:color_yellow)\
+[](fg:color_orange bg:color_yellow)\
 $git_branch\
 $git_status\
-[](fg:color_yellow bg:color_green)\
+[](fg:color_yellow bg:color_green)\
 $c\
 $dotnet\
 $rust\
@@ -27,14 +27,12 @@ $gradle\
 $julia\
 $nim\
 $scala\
-[](fg:color_green bg:color_cyan)\
+[](fg:color_green bg:color_cyan)\
 $docker_context\
-[ ](color_cyan)\
-$fill\
-([ ](mono4)\
+[](fg:color_cyan bg:mono4)\
 $time\
 $battery\
-[](mono4))\
+[](fg:mono4)\
 $line_break$character"""
 
 # Sets the palette to "one_dark".
@@ -100,14 +98,14 @@ Windows = "󰍲"
 
 # Module that displays the current username.
 [username]
-show_always = true
+show_always = false
 style_user = "bold bg:color_red0 fg:syntax_bg"
 style_root = "bold italic bg:color_red0 fg:syntax_bg"
 format = '[ $user ]($style)'
 
 # Module that displays the current directory.
 [directory]
-style = "italic fg:syntax_bg bg:color_orange"
+style = "fg:syntax_bg bg:color_orange"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -215,12 +213,8 @@ format = '[[ $symbol ($version) ](fg:syntax_bg bg:color_green)]($style)'
 # Module that displays the docker context.
 [docker_context]
 symbol = " "
-style = "bg:mono3"
-format = '[[ $symbol( $context) ](fg:syntax_fg bg:mono3)]($style)'
-
-# Module that fills the space between the left and right segments.
-[fill]
-symbol = " "
+style = "bg:color_cyan"
+format = '[[ $symbol( $context) ](fg:syntax_bg bg:color_cyan)]($style)'
 
 # Module that displays the time.
 [time]
